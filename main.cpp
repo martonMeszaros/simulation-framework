@@ -8,8 +8,10 @@ int main() {
     Initializer initializer;
     Window window("Hello World!", 480, 480, false);
     Renderer renderer(window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-//    const RGBA BLACK(0, 0, 0);
+    const RGBA PURPLE(255, 0, 255);
     const RGBA WHITE(255, 255, 255);
+    const Rect rect(0, 0, 100, 215);
+    renderer.fill();
     renderer.present();
 
     using namespace std::this_thread;

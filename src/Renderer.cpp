@@ -3,6 +3,7 @@
 //
 
 #include "../include/Renderer.h"
+#include "../include/Rect.h"
 
 namespace sf {
 
@@ -26,9 +27,8 @@ namespace sf {
         SDL_RenderFillRect(renderer, NULL);
     }
 
-    void Renderer::fillRect() {
-        // TODO: Update to use provided Rect.
-        fill();
+    void Renderer::fillRect(Rect &rect) {
+        SDL_RenderFillRect(renderer, &rect.getRect());
     }
 
     void Renderer::present() {

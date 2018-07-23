@@ -7,6 +7,7 @@
 
 #include "Window.h"
 #include "RGBA.h"
+#include "Rect.h"
 
 namespace sf {
     /** Create a Renderer to draw to a window. */
@@ -18,7 +19,7 @@ namespace sf {
 
         void clear();
         void fill();
-        void fillRect();
+        void fillRect(Rect &rect);
         /** Update screen with any new draw calls. */
         void present();
 

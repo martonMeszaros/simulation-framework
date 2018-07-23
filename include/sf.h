@@ -6,6 +6,7 @@
 #define SIMULATION_FRAMEWORK_SF_H
 
 #include "Initializer.h"
+#include "Rect.h"
 #include "Renderer.h"
 #include "RGBA.h"
 #include "Window.h"
