@@ -26,5 +26,4 @@ namespace sf {
     };
 }   // sf
 
-
 #endif //SIMULATION_FRAMEWORK_SIMULATIONINITIALIZER_H

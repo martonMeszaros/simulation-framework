@@ -50,5 +50,4 @@ namespace sf {
     };
 }   // sf
 
-
 #endif //SIMULATION_FRAMEWORK_WINDOW_H
