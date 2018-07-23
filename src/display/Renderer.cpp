@@ -2,8 +2,8 @@
 // Created by meszi on 2018.07.23..
 //
 
-#include "../include/Renderer.h"
-#include "../include/Rect.h"
+#include "../../include/display/Renderer.h"
+#include "../../include/display/Rect.h"
 
 namespace sf {
 

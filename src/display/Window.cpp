@@ -2,7 +2,7 @@
 // Created by meszi on 2018.07.23..
 //
 
-#include "../include/Window.h"
+#include "../../include/display/Window.h"
 
 namespace sf {
     Window::Window(const std::string &title, const int width, const int height, const bool hidden) :

@@ -2,7 +2,7 @@
 // Created by meszi on 2018.07.23..
 //
 
-#include "../include/Rect.h"
+#include "../../include/display/Rect.h"
 
 namespace sf {
     Rect::Rect() : Rect(0, 0, 0, 0) {}

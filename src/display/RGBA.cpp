@@ -2,7 +2,7 @@
 // Created by meszi on 2018.07.23..
 //
 
-#include "../include/RGBA.h"
+#include "../../include/display/RGBA.h"
 
 namespace sf {
     RGBA::RGBA(const Uint8 red, const Uint8 green, const Uint8 blue) :
