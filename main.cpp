@@ -1,6 +1,9 @@
 #include <iostream>
+#include "include/sf.h"
+
+using namespace sf;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Initializer initializer;
     return 0;
 }
