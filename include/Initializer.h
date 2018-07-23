@@ -8,8 +8,7 @@
 #include <SDL.h>
 
 namespace sf {
-    /** Initialize SDL at construction and shutdown at destruction.
-     */
+    /** Initialize SDL at construction and shutdown at destruction. */
     class Initializer {
     public:
         /** Initialize SDL's provided subsystems.

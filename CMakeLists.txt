@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 
-add_executable(simulation_framework main.cpp src/Initializer.cpp include/Initializer.h include/sf.h)
+add_executable(simulation_framework main.cpp src/Initializer.cpp include/Initializer.h include/sf.h src/Window.cpp include/Window.h)
 target_link_libraries(simulation_framework ${SDL2_LIBRARIES})

@@ -6,6 +6,7 @@
 #define SIMULATION_FRAMEWORK_SF_H
 
 #include "Initializer.h"
+#include "Window.h"
 
 namespace sf {}
 
