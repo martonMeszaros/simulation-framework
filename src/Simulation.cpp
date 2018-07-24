@@ -6,22 +6,35 @@
 
 namespace sf {
 
-    Simulation::Simulation(const Window &window, const Renderer &renderer) :
+    Simulation::Simulation(const Window &window, const Renderer &renderer, const Uint32 timeStamp) :
             running(true),
             window(window),
-            renderer(renderer) {}
+            renderer(renderer),
+            timeStep(timeStamp) {}
 
-    Simulation::Simulation(const Uint32 subsystems, const Window &window, const Renderer &renderer) :
+    Simulation::Simulation(const Uint32 subsystems, const Window &window,
+                           const Renderer &renderer, const Uint32 timeStamp) :
             initializer(subsystems),
             running(true),
             window(window),
-            renderer(renderer) {}
+            renderer(renderer),
+            timeStep(timeStamp) {}
 
     void Simulation::init() {}
 
     void Simulation::shutdown() {}
 
+    void Simulation::startFrame() {
+        timePassed = SDL_GetTicks();
+    }
+
     const bool Simulation::pollEvent() {
         return eventDispatcher.pollEvent(currentEvent);
+    }
+
+    void Simulation::waitForNextFrame() {
+        while (timePassed + timeStep > SDL_GetTicks()) {
+            SDL_Delay(0);
+        }
     }
 }   // sf

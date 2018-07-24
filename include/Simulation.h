@@ -12,8 +12,9 @@
 namespace sf {
     class Simulation {
     public:
-        explicit Simulation(const Window &window, const Renderer &renderer);
-        explicit Simulation(const Uint32 subsystems, const Window &window, const Renderer &renderer);
+        explicit Simulation(const Window &window, const Renderer &renderer, const Uint32 timeStep);
+        explicit Simulation(const Uint32 subsystems, const Window &window, const Renderer &renderer,
+                            const Uint32 timeStep);
         ~Simulation() = default;
 
         virtual void init();
@@ -21,6 +22,8 @@ namespace sf {
         virtual void shutdown();
 
     private:
+        Uint32 timePassed;
+        const Uint32 timeStep;
         Initializer initializer;
 
     protected:
@@ -30,9 +33,12 @@ namespace sf {
         EventDispatcher eventDispatcher;
         Event currentEvent;
 
+        void startFrame();
+        const bool pollEvent();
+        virtual void handleEvent() = 0;
         virtual void process() = 0;
         virtual void render() = 0;
-        const bool pollEvent();
+        void waitForNextFrame();
     };
 }   // sf
 
