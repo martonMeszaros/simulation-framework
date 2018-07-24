@@ -5,21 +5,18 @@
 #ifndef SIMULATION_FRAMEWORK_EVENT_H
 #define SIMULATION_FRAMEWORK_EVENT_H
 
-#include "EventType.h"
+#include <SDL_events.h>
 
 namespace sf {
     class Event {
     public:
-        Event();
-        ~Event();
+        Event() = default;
+        ~Event() = default;
 
-        void setEvent(SDL_Event *e);
-        EventType getType() const;
-        SDL_Event *const getEvent() const;
+        SDL_Event & getEvent();
 
     private:
-        EventType type;
-        SDL_Event *event;
+        SDL_Event event;
     };
 }   // sf
 
