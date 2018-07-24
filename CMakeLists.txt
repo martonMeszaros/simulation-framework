@@ -7,15 +7,23 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 
 add_executable(simulation_framework
-        src/Initializer.cpp
-        include/Initializer.h
-        src/display/Window.cpp
-        include/display/Window.h
-        src/display/RGBA.cpp
-        include/display/RGBA.h
-        src/display/Renderer.cpp
-        include/display/Renderer.h
-        src/display/Rect.cpp
         include/display/Rect.h
-        include/event/EventType.h src/event/Event.cpp include/event/Event.h src/event/EventDispatcher.cpp include/event/EventDispatcher.h src/Simulation.cpp include/Simulation.h)
+        include/display/RGBA.h
+        include/display/Renderer.h
+        include/display/Window.h
+        include/event/Event.h
+        include/event/EventDispatcher.h
+        include/event/EventType.h
+        include/Initializer.h
+        include/Simulation.h
+
+        src/display/Rect.cpp
+        src/display/Renderer.cpp
+        src/display/RGBA.cpp
+        src/display/Window.cpp
+        src/event/Event.cpp
+        src/event/EventDispatcher.cpp
+        src/Initializer.cpp
+        src/Simulation.cpp
+        src/main.cpp)
 target_link_libraries(simulation_framework ${SDL2_LIBRARIES})
