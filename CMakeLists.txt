@@ -7,7 +7,6 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 
 add_executable(simulation_framework
-        main.cpp
         src/Initializer.cpp
         include/Initializer.h
         src/display/Window.cpp
@@ -18,5 +17,5 @@ add_executable(simulation_framework
         include/display/Renderer.h
         src/display/Rect.cpp
         include/display/Rect.h
-        include/event/EventType.h src/event/Event.cpp include/event/Event.h src/event/EventDispatcher.cpp include/event/EventDispatcher.h src/Simulation.cpp include/Simulation.h GlidingRectangles.cpp GlidingRectangles.h)
+        include/event/EventType.h src/event/Event.cpp include/event/Event.h src/event/EventDispatcher.cpp include/event/EventDispatcher.h src/Simulation.cpp include/Simulation.h)
 target_link_libraries(simulation_framework ${SDL2_LIBRARIES})
