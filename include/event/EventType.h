@@ -9,6 +9,7 @@
 
 namespace sf {
     enum EventType {
+        NONE = -1,
         QUIT = SDL_QUIT,
         KEYDOWN = SDL_KEYDOWN,
         KEYUP = SDL_KEYUP,

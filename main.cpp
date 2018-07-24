@@ -12,21 +12,8 @@ int main() {
     const RGBA PURPLE(128, 0, 255);
     Rect rect(0, 0, 240, 240);
 
-    using namespace std::this_thread;
-    using namespace std::chrono;
-//    for (int i = 0; i < 2; ++i) {
-//        for (int y = 0; y < 2; ++y) {
-//            for (int x = 0; x < 2; ++x) {
-//                rect.x = x * 240;
-//                rect.y = y * 240;
-//                renderer.setDrawColor(WHITE);
-//                renderer.clear();
-//                renderer.setDrawColor(PURPLE);
-//                renderer.fillRect(rect);
-//                renderer.present();
-//                sleep_for(milliseconds(500));
-//            }
-//        }
-//    }
+//    using namespace std::this_thread;
+//    using namespace std::chrono;
+
     return 0;
 }
