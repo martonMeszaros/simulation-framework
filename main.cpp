@@ -21,11 +21,11 @@ int main() {
     while (running) {
         // Event handling
         while (dispatcher.pollEvent(event)) {
-            if (event.getEvent().type == SDL_QUIT) {
+            if (event.getType() == SDL_QUIT) {
                 running = false;
-            } else if (event.getEvent().type == SDL_KEYUP) {
+            } else if (event.getType() == SDL_KEYUP) {
                 rect.x = (0 == rect.x) ? 240 : 0;
-            } else if (event.getEvent().type == SDL_MOUSEBUTTONUP) {
+            } else if (event.getType() == SDL_MOUSEBUTTONUP) {
                 rect.y = (0 == rect.y) ? 240 : 0;
             }
         }

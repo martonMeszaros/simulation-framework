@@ -14,6 +14,7 @@ namespace sf {
         ~Event() = default;
 
         SDL_Event & getEvent();
+        Uint32 getType() const;
 
     private:
         SDL_Event event;
