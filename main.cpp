@@ -14,19 +14,19 @@ int main() {
 
     using namespace std::this_thread;
     using namespace std::chrono;
-    for (int i = 0; i < 2; ++i) {
-        for (int y = 0; y < 2; ++y) {
-            for (int x = 0; x < 2; ++x) {
-                rect.x = x * 240;
-                rect.y = y * 240;
-                renderer.setDrawColor(WHITE);
-                renderer.clear();
-                renderer.setDrawColor(PURPLE);
-                renderer.fillRect(rect);
-                renderer.present();
-                sleep_for(milliseconds(500));
-            }
-        }
-    }
+//    for (int i = 0; i < 2; ++i) {
+//        for (int y = 0; y < 2; ++y) {
+//            for (int x = 0; x < 2; ++x) {
+//                rect.x = x * 240;
+//                rect.y = y * 240;
+//                renderer.setDrawColor(WHITE);
+//                renderer.clear();
+//                renderer.setDrawColor(PURPLE);
+//                renderer.fillRect(rect);
+//                renderer.present();
+//                sleep_for(milliseconds(500));
+//            }
+//        }
+//    }
     return 0;
 }

@@ -6,10 +6,7 @@
 #define SIMULATION_FRAMEWORK_SF_H
 
 #include "Initializer.h"
-#include "display/Rect.h"
 #include "display/Renderer.h"
-#include "display/RGBA.h"
-#include "display/Window.h"
 
 namespace sf {}
 
