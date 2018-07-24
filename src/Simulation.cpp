@@ -6,18 +6,11 @@
 
 namespace sf {
 
-    Simulation::Simulation(const Window &window, const Renderer &renderer, const Uint32 timeStamp) :
+    Simulation::Simulation(const std::string &windowTitle, const int windowWidth, const int windowHeight,
+                               const Uint32 rendererFlags, const Uint32 timeStamp) :
             running(true),
-            window(window),
-            renderer(renderer),
-            timeStep(timeStamp) {}
-
-    Simulation::Simulation(const Uint32 subsystems, const Window &window,
-                           const Renderer &renderer, const Uint32 timeStamp) :
-            initializer(subsystems),
-            running(true),
-            window(window),
-            renderer(renderer),
+            window(windowTitle, windowWidth, windowHeight, false),
+            renderer(window, rendererFlags),
             timeStep(timeStamp) {}
 
     void Simulation::init() {}

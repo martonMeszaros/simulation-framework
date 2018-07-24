@@ -18,5 +18,5 @@ add_executable(simulation_framework
         include/display/Renderer.h
         src/display/Rect.cpp
         include/display/Rect.h
-        include/event/EventType.h src/event/Event.cpp include/event/Event.h src/event/EventDispatcher.cpp include/event/EventDispatcher.h src/Simulation.cpp include/Simulation.h)
+        include/event/EventType.h src/event/Event.cpp include/event/Event.h src/event/EventDispatcher.cpp include/event/EventDispatcher.h src/Simulation.cpp include/Simulation.h GlidingRectangles.cpp GlidingRectangles.h)
 target_link_libraries(simulation_framework ${SDL2_LIBRARIES})
