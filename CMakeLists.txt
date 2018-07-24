@@ -16,6 +16,7 @@ add_executable(simulation_framework
         include/event/EventType.h
         include/Initializer.h
         include/Simulation.h
+        include/sf.h
 
         src/display/Rect.cpp
         src/display/Renderer.cpp

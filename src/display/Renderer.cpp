@@ -23,10 +23,6 @@ namespace sf {
         SDL_RenderClear(renderer);
     }
 
-    void Renderer::fill() {
-        SDL_RenderFillRect(renderer, NULL);
-    }
-
     void Renderer::fillRect(Rect &rect) {
         SDL_RenderFillRect(renderer, &rect.getRect());
     }

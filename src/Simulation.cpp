@@ -8,10 +8,12 @@ namespace sf {
 
     Simulation::Simulation(const std::string &windowTitle, const int windowWidth, const int windowHeight,
                                const Uint32 rendererFlags, const Uint32 timeStamp) :
+            timeStep(timeStamp),
+            timePassed(0),
             running(true),
+            // Forces the window to start shown, with no providable flags.
             window(windowTitle, windowWidth, windowHeight, false),
-            renderer(window, rendererFlags),
-            timeStep(timeStamp) {}
+            renderer(window, rendererFlags) {}
 
     void Simulation::init() {}
 

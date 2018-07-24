@@ -14,11 +14,16 @@ namespace sf {
     class Renderer {
     public:
         Renderer(const Window &window);
+        /** Initialize a Renderer with provided flags.
+         *
+         * @param flags The different renderer flags OR'd together.
+         */
         Renderer(const Window &window, const Uint32 flags);
         ~Renderer();
 
+        /** Clear the renderer with the current draw color. */
         void clear();
-        void fill();
+        /** Fill the specified area with the current draw color. */
         void fillRect(Rect &rect);
         /** Update screen with any new draw calls. */
         void present();

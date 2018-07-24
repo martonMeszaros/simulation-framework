@@ -20,7 +20,7 @@ namespace sf {
         Rect(const int x, const int y, const int width, const int height);
         ~Rect() = default;
 
-        /** Return and SDL_Rect version of this Rect */
+        /** Return an SDL_Rect version of this Rect */
         const SDL_Rect &getRect();
 
     private:

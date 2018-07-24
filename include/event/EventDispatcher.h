@@ -8,6 +8,7 @@
 #include "Event.h"
 
 namespace sf {
+    /** Create a dispatches that is responsible for managing events. */
     class EventDispatcher {
     public:
         EventDispatcher() = default;

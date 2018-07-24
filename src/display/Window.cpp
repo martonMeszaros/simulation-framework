@@ -11,6 +11,7 @@ namespace sf {
             defaultHeight(height),
             hidden(hidden),
             window(nullptr) {
+        // Flag(s) are decided based on whether the window was created as hidden.
         Uint32 flags = hidden ? SDL_WINDOW_HIDDEN : 0;
         window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                 width, height, flags);
@@ -23,6 +24,9 @@ namespace sf {
             defaultHeight(height),
             hidden(hidden),
             window(nullptr) {
+        // If the window was created hidden, OR's the appropriate flag into the others provided.
+        // You could also specify the window as shown by default,
+        // but provide the hidden flag separately.
         if (hidden) {
             window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                     width, height, flags | SDL_WINDOW_HIDDEN);

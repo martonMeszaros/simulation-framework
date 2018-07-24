@@ -15,6 +15,7 @@ namespace sf {
         Uint8 blue;
         Uint8 alpha;
 
+        /** Create a fully opaque color (alpha = 255). */
         RGBA(const Uint8 red, const Uint8 green, const Uint8 blue);
         RGBA(const Uint8 red, const Uint8 green, const Uint8 blue, const Uint8 alpha);
     };
