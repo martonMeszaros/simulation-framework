@@ -7,6 +7,7 @@
 
 #include "Initializer.h"
 #include "display/Renderer.h"
+#include "event/EventDispatcher.h"
 
 namespace sf {}
 
