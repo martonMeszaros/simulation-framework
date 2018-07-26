@@ -17,5 +17,5 @@ set(SOURCE_FILES
         src/Simulation.cpp
         src/simulation_framework.cpp)
 
-add_executable(simulation_framework ${SOURCE_FILES})
+add_library(simulation_framework ${SOURCE_FILES})
 target_link_libraries(simulation_framework ${SDL2_LIBRARIES})
