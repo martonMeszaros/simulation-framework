@@ -17,18 +17,11 @@ namespace sf {
                                     const Uint32 rendererFlags, const Uint32 timeStep);
         virtual ~Simulation() = default;
 
-        /** Should be called before Simulation::loop(), if you need some setup,
-         * that cannot be done in the constructor.
-         */
-        virtual void init();
         /** Use this method to implement the main behaviour of your simulation. */
-        virtual void loop() = 0;
-        /** Should be called after Simulation::loop(), if you need some breakdown,
-         * that cannot be done in the destructor.
-         */
-        virtual void shutdown();
+        virtual void run() = 0;
 
     private:
+        bool running;
         /** Represents the minimum amount of milliseconds that should elapse between frames.
          *
          * For a 60fps application, set it to 16.
@@ -39,18 +32,17 @@ namespace sf {
         Initializer initializer;
 
     protected:
-        /** Represents whether the application is running, or should be terminated.
-         *
-         * Should not be confused with any kind of paused state.
-         */
-        bool running;
         Window window;
         Renderer renderer;
         EventDispatcher eventDispatcher;
         Event currentEvent;
 
-        /** Call at the beginning of each frame to correctly handle frame rate. */
-        void startFrame();
+        /** Call this method as the simulation's main loop's condition.
+         *
+         * This is also used to set Simulation::timePassed at the beginning of each frame.
+         */
+        const bool isRunning();
+        void setRunning(const bool running);
         /** This is a propagation from EventDispatches::pollEvent(Event&).
          *
          * Does the same, but only on the provided Simulation::currentEvent object.

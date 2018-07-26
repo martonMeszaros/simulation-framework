@@ -15,12 +15,13 @@ namespace sf {
             window(windowTitle, windowWidth, windowHeight, false),
             renderer(window, rendererFlags) {}
 
-    void Simulation::init() {}
-
-    void Simulation::shutdown() {}
-
-    void Simulation::startFrame() {
+    const bool Simulation::isRunning() {
         timePassed = SDL_GetTicks();
+        return running;
+    }
+
+    void Simulation::setRunning(const bool running) {
+        this->running = running;
     }
 
     const bool Simulation::pollEvent() {
@@ -29,6 +30,8 @@ namespace sf {
 
     void Simulation::waitForNextFrame() {
         while (timePassed + timeStep > SDL_GetTicks()) {
+            // Ideally, we would wait exactly the difference between
+            // the evaluations sides, but delays under 10ms are inconsistent.
             SDL_Delay(0);
         }
     }
