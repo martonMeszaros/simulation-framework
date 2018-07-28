@@ -1,35 +1,18 @@
 #include "../../include/display/Window.h"
 
 namespace sf {
-    Window::Window(const std::string &title, const int width, const int height, const bool hidden) :
+    Window::Window(const std::string &title, const int width, const int height) :
+            Window(title, width, height, 0) {}
+
+    Window::Window(const std::string &title, const int width, const int height, const Uint32 flags) :
             title(title),
             defaultWidth(width),
             defaultHeight(height),
-            hidden(hidden),
             window(nullptr) {
-        // Flag(s) are decided based on whether the window was created as hidden.
-        Uint32 flags = hidden ? SDL_WINDOW_HIDDEN : 0;
         window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                 width, height, flags);
-    }
-
-    Window::Window(const std::string &title, const int width, const int height,
-                   const bool hidden, const Uint32 flags) :
-            title(title),
-            defaultWidth(width),
-            defaultHeight(height),
-            hidden(hidden),
-            window(nullptr) {
-        // If the window was created hidden, OR's the appropriate flag into the others provided.
-        // You could also specify the window as shown by default,
-        // but provide the hidden flag separately.
-        if (hidden) {
-            window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                    width, height, flags | SDL_WINDOW_HIDDEN);
-        } else {
-            window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                    width, height, flags);
-        }
+        const Uint32 flagsMask = SDL_GetWindowFlags(window);
+        hidden = (SDL_WINDOW_HIDDEN & flagsMask) == flagsMask;
     }
 
     Window::~Window() {

@@ -8,13 +8,11 @@ namespace sf {
     /** Create a window. */
     class Window {
     public:
-        explicit Window(const std::string &title, const int width, const int height, const bool hidden);
-        /** Initialize a Window with provided flags.
-         *
+        explicit Window(const std::string &title, const int width, const int height);
+        /** Initialize a Window with the provided flags.
          * @param flags The different window flags OR'd together.
          */
-        explicit Window(const std::string &title, const int width, const int height,
-               const bool hidden, const Uint32 flags);
+        explicit Window(const std::string &title, const int width, const int height, const Uint32 flags);
         ~Window();
 
         void show();
@@ -24,7 +22,6 @@ namespace sf {
         /** Restore the window after it has been minimized or maximized. */
         void restore();
         /** Restore the window's size to it's original value.
-         *
          * @param centerWindow Whether to position the resized window in the center.
          */
         void restoreSize(const bool centerWindow);

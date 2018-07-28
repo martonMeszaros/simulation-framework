@@ -7,7 +7,7 @@ namespace sf {
             timePassed(0),
             running(true),
             // Forces the window to start shown, with no providable flags.
-            window(windowTitle, windowWidth, windowHeight, false),
+            window(windowTitle, windowWidth, windowHeight),
             renderer(window, rendererFlags) {}
 
     const bool Simulation::isRunning() {
