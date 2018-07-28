@@ -1,14 +1,10 @@
-//
-// Created by meszi on 2018.07.24..
-//
-
 #ifndef SIMULATION_FRAMEWORK_EVENTDISPACHER_H
 #define SIMULATION_FRAMEWORK_EVENTDISPACHER_H
 
 #include "Event.h"
 
 namespace sf {
-    /** Create a dispatches that is responsible for managing events. */
+    /** Create a dispatcher that is responsible for managing events. */
     class EventDispatcher {
     public:
         EventDispatcher() = default;

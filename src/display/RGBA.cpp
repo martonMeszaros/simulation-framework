@@ -1,7 +1,3 @@
-//
-// Created by meszi on 2018.07.23..
-//
-
 #include "../../include/display/RGBA.h"
 
 namespace sf {

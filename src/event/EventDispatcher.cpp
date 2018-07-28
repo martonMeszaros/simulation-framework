@@ -1,7 +1,3 @@
-//
-// Created by meszi on 2018.07.24..
-//
-
 #include <iostream>
 #include "../../include/event/EventDispatcher.h"
 

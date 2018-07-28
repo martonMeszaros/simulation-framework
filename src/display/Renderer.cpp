@@ -1,12 +1,7 @@
-//
-// Created by meszi on 2018.07.23..
-//
-
 #include "../../include/display/Renderer.h"
 #include "../../include/display/Rect.h"
 
 namespace sf {
-
     Renderer::Renderer(const Window &window) : Renderer(window, 0) {}
 
     Renderer::Renderer(const Window &window, const Uint32 flags) : renderer(nullptr) {

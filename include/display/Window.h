@@ -1,7 +1,3 @@
-//
-// Created by meszi on 2018.07.23..
-//
-
 #ifndef SIMULATION_FRAMEWORK_WINDOW_H
 #define SIMULATION_FRAMEWORK_WINDOW_H
 

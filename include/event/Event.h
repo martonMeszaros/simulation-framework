@@ -1,7 +1,3 @@
-//
-// Created by meszi on 2018.07.24..
-//
-
 #ifndef SIMULATION_FRAMEWORK_EVENT_H
 #define SIMULATION_FRAMEWORK_EVENT_H
 
