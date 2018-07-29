@@ -13,6 +13,8 @@ namespace sf {
          * @param flags The different window flags OR'd together.
          */
         explicit Window(const std::string &title, const int width, const int height, const Uint32 flags);
+        Window(const Window &other) = default;
+        Window(Window &&other) = default;
         ~Window();
 
         void show();
