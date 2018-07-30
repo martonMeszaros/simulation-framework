@@ -8,7 +8,13 @@ namespace sf {
     /** Represents an abstract simulation and provides structure for it. */
     class Simulation {
     public:
-        explicit Simulation(const Window &windowInitializer, const Uint32 rendererFlags, const Uint32 timeStep);
+        /** Creates the main facilities for a simulation.
+         * @param window sf::Window object. Since you need to create it beforehand,
+         * you'll also need to create an sf::Initializer object before then.
+         * @param rendererFlags Flags to use for the renderer OR'd together.
+         * @param timeStep Minimum amount of time to pass between frames.
+         */
+        explicit Simulation(const Window &window, const Uint32 rendererFlags, const Uint32 timeStep);
         virtual ~Simulation() = default;
 
         /** Use this method to implement the main behaviour of your simulation. */
@@ -20,7 +26,7 @@ namespace sf {
          * For a 60fps application, set it to 16.
          */
         const Uint32 timeStep;
-        /** Used for correctly calculating the time between each frame. */
+        /** Used for correctly calculate the time between each frame. */
         Uint32 timePassed;
 
     protected:
@@ -30,18 +36,18 @@ namespace sf {
         Event currentEvent;
 
         /** Call this method as the simulation's main loop's condition.
-         * This is also used to set Simulation::timePassed at the beginning of each frame.
+         * The method is responsible for setting Simulation::timePassed at the beginning of each frame.
+         * @return The value of Simulation::running.
          */
         const bool startFrame();
-        void setRunning(const bool running);
-        /** This is a propagation from EventDispatches::pollEvent(Event&).
-         * Does the same, but only on the provided Simulation::currentEvent object.
+        /** This is a propagation of EventDispatcher::pollEvent(Event&).
+         * Does the same, and the polled event will be in Simulation::currentEvent.
          */
         const bool pollEvent();
         /** Use this method to handle events that occur while running the application. */
         virtual void handleEvents() = 0;
         /** Use this method to execute changes to the simulation's state. */
-        virtual void process() = 0;
+        virtual void update() = 0;
         /** Use this method to organize your render calls in the application. */
         virtual void render() = 0;
         /** Call at the end of each frame to lock the frame rate specified by Simulation::timeStep.
@@ -49,6 +55,9 @@ namespace sf {
          * it only makes sure at least timeStep milliseconds pass.
          */
         void waitForNextFrame();
+
+        const bool isRunning() const;
+        void setRunning(const bool running);
     };
 }   // sf
 
