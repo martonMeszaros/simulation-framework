@@ -11,7 +11,6 @@ namespace sf {
         ~EventDispatcher() = default;
 
         /** Poll the next event in the event queue.
-         *
          * @param event The object in which to store the event's data.
          * @return true, if an event was polled, false if there is no event in the queue.
          */

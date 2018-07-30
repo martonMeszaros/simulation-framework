@@ -11,7 +11,6 @@ namespace sf {
     public:
         Renderer(const Window &window);
         /** Initialize a Renderer with provided flags.
-         *
          * @param flags The different renderer flags OR'd together.
          */
         Renderer(const Window &window, const Uint32 flags);

@@ -2,13 +2,13 @@
 #define SIMULATION_FRAMEWORK_SIMULATIONINITIALIZER_H
 
 #include <SDL.h>
+#include "enums/SubSystems.h"
 
 namespace sf {
     /** Initialize SDL at construction and shutdown at destruction. */
     class Initializer {
     public:
         /** Initialize SDL's provided subsystems.
-         *
          * @param subsystems The different subsystems OR'd together.
          */
         explicit Initializer(const Uint32 subsystems = DEFAULT_SUBSYSTEMS);
@@ -18,7 +18,7 @@ namespace sf {
         void quitSubSystem(const Uint32 subsystem);
 
     private:
-        static const Uint32 DEFAULT_SUBSYSTEMS = SDL_INIT_VIDEO | SDL_INIT_EVENTS;
+        static const Uint32 DEFAULT_SUBSYSTEMS = SubSystems::EVENTS | SubSystems::VIDEO;
     };
 }   // sf
 
