@@ -24,8 +24,12 @@ namespace sf {
         // An empty loop would increase power draw for handheld devices significantly,
         // so a function call is still used, to slow down the loop.
         while (timePassed + timeStep > SDL_GetTicks()) {
-            SDL_Delay(0);
+            delay(0);
         }
+    }
+
+    void Simulation::delay(const Uint32 milliseconds) {
+        SDL_Delay(milliseconds);
     }
 
     const bool Simulation::isRunning() const {

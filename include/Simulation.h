@@ -55,6 +55,10 @@ namespace sf {
          * it only makes sure at least timeStep milliseconds pass.
          */
         void waitForNextFrame();
+        /** Delay execution by the specified amount.
+         * Delays below 10 milliseconds are inconsistent.
+         */
+        void delay(const Uint32 milliseconds);
 
         const bool isRunning() const;
         void setRunning(const bool running);
