@@ -8,7 +8,7 @@ namespace sf {
             window(windowInitializer),
             renderer(window, rendererFlags) {}
 
-    const bool Simulation::isRunning() {
+    const bool Simulation::startFrame() {
         timePassed = SDL_GetTicks();
         return running;
     }

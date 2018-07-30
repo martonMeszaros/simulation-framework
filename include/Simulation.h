@@ -17,7 +17,6 @@ namespace sf {
     private:
         bool running;
         /** Represents the minimum amount of milliseconds that should elapse between frames.
-         *
          * For a 60fps application, set it to 16.
          */
         const Uint32 timeStep;
@@ -31,13 +30,11 @@ namespace sf {
         Event currentEvent;
 
         /** Call this method as the simulation's main loop's condition.
-         *
          * This is also used to set Simulation::timePassed at the beginning of each frame.
          */
-        const bool isRunning();
+        const bool startFrame();
         void setRunning(const bool running);
         /** This is a propagation from EventDispatches::pollEvent(Event&).
-         *
          * Does the same, but only on the provided Simulation::currentEvent object.
          */
         const bool pollEvent();
@@ -48,7 +45,6 @@ namespace sf {
         /** Use this method to organize your render calls in the application. */
         virtual void render() = 0;
         /** Call at the end of each frame to lock the frame rate specified by Simulation::timeStep.
-         *
          * This doesn't handle what happens, if the frame took longer to process, than timeStep,
          * it only makes sure at least timeStep milliseconds pass.
          */
