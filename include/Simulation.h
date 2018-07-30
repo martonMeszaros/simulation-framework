@@ -1,7 +1,6 @@
 #ifndef SIMULATION_FRAMEWORK_SIMULATION_H
 #define SIMULATION_FRAMEWORK_SIMULATION_H
 
-#include "Initializer.h"
 #include "display/Renderer.h"
 #include "event/EventDispatcher.h"
 
@@ -9,8 +8,7 @@ namespace sf {
     /** Represents an abstract simulation and provides structure for it. */
     class Simulation {
     public:
-        explicit Simulation(const std::string &windowTitle, const int windowWidth, const int windowHeight,
-                                    const Uint32 rendererFlags, const Uint32 timeStep);
+        explicit Simulation(const Window &windowInitializer, const Uint32 rendererFlags, const Uint32 timeStep);
         virtual ~Simulation() = default;
 
         /** Use this method to implement the main behaviour of your simulation. */
@@ -25,7 +23,6 @@ namespace sf {
         const Uint32 timeStep;
         /** Used for correctly calculating the time between each frame. */
         Uint32 timePassed;
-        Initializer initializer;
 
     protected:
         Window window;

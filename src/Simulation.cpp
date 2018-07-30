@@ -1,13 +1,11 @@
 #include "../include/Simulation.h"
 
 namespace sf {
-    Simulation::Simulation(const std::string &windowTitle, const int windowWidth, const int windowHeight,
-                               const Uint32 rendererFlags, const Uint32 timeStamp) :
-            timeStep(timeStamp),
-            timePassed(0),
+    Simulation::Simulation(const Window &windowInitializer, const Uint32 rendererFlags, const Uint32 timeStep) :
             running(true),
-            // Forces the window to start shown, with no providable flags.
-            window(windowTitle, windowWidth, windowHeight),
+            timeStep(timeStep),
+            timePassed(SDL_GetTicks()),
+            window(windowInitializer),
             renderer(window, rendererFlags) {}
 
     const bool Simulation::isRunning() {
